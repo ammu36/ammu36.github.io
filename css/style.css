@@ -9,7 +9,7 @@ body
 	padding: 0;
 	font-family: palatino;
 	background-size: cover;
-
+	background-color: black;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -21,11 +21,12 @@ body
 	height: 49vh;
 	float: none;
 	margin-bottom: 10px;
-	background: rgba(0,0,0,0.6);
+	/*background: rgba(0,0,0,0.6);*/
+
 	text-align: center;
 	box-sizing: border-box;
 	overflow: hidden;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 }
 .rightside .box
 {
@@ -51,27 +52,51 @@ body
 	box-sizing: border-box;
 	overflow: hidden;
 }
-
-.box h1
+#name
 {
-	color: aqua;
-	font-weight: 600;
-	font-size: 40px;
+	font-size: 20px;
+	font-weight: 800;
+}
+#box_bg
+{
+	
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+}
+
+#box_bg2
+{
+	
+	background-color: rgba(0,0,0,0.6);
+	
+}
+#date, #timeD, #where
+{
+	font-weight: 800;
+}
+
+
+#place, #time
+{
+	color: #ccff33;
+	font-weight: 800;
 }
 .box span
 {
 	border:0;
 	display: block;
-	margin: 20px auto;
+	margin: 18px auto;
 	text-align: center;
 	outline: none;
 	color: #ccff33;
-	font-weight: 800;
+	/*font-weight: 800;*/
 }
 .box span:nth-child(1), .box span:nth-child(2), .box span:nth-child(3), #per
 {
 	color: white;
-	font-size: 22px;
+	font-size: 18px;
 }
 .container .box .news .marquee-bottom
 {

@@ -17,6 +17,7 @@ const date = document.getElementById("date");
 const NewsList = document.querySelector('#news-bottom');
 const NewsTop = document.querySelector('#news-top');
 const NewsDetail = document.querySelector('#news-detail');
+const bgIm = document.querySelector('#box_bg');
 	
 var dbRefObj = firebase.database().ref().child('faculty').child('Manoj').child('current_place');
 var dbRefObj1 = firebase.database().ref().child('faculty').child('Manoj').child('time_of_return');
@@ -30,7 +31,7 @@ var storageRef = storage.ref();
 
 var tangRef2 = storageRef.child('slideshowPictures/');
 
-name.innerHTML="Manoj T. Joy";
+name.innerHTML="Prof. Manoj T. Joy, HoD";
 	
 dbRefObj.on('value', function(datasnap1){
 
@@ -50,7 +51,7 @@ dbRefObj.on('value', function(datasnap1){
 	else if (placename == 'Automobile')
 		document.body.style.backgroundImage = "url('images/auto.jpg')";
 	else if (placename == "Central Auditorium")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114947480435275_20190516_185623853.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114947480435275_20190516_185623853.jpeg')";
 	else if (placename == "College Office")
 		document.body.style.backgroundImage = "url('images/LRM_EXPORT_115079680147662_20190516_190027175.jpeg')";
 	else if (placename == "Manager's Office")
@@ -230,14 +231,18 @@ newscount.on('value', function(snapNewCount){
   }
 
   function changeImage(){
-  	document.querySelector('img').src = ListOfImages[iImg2];
+
+  	
   	console.log("imgimgimg "+iImg2);
   	if(iImg2 < (ListOfImages.length))
+  	{
+  		document.querySelector('img').src = ListOfImages[iImg2];
   		iImg2++;
+  	}
   	else
   		iImg2=0;
   	
-  	setTimeout(changeImage, 20000);
+  	setTimeout(changeImage, 3000);
   }
 
    

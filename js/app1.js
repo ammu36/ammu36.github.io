@@ -237,7 +237,7 @@ newscount.on('value', function(snapNewCount){
   	else
   		iImg2=0;
   	
-  	setTimeout(changeImage, 10000);
+  	setTimeout(changeImage, 20000);
   }
 
    

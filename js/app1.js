@@ -21,7 +21,7 @@ const NewsDetail = document.querySelector('#news-detail');
 var dbRefObj = firebase.database().ref().child('faculty').child('Manoj').child('current_place');
 var dbRefObj1 = firebase.database().ref().child('faculty').child('Manoj').child('time_of_return');
 var dbRefObj2 = firebase.database().ref().child('news');
-var dbRefObj3 = firebase.database().ref().child('slideCount');
+
 
 var delayInMilliseconds = 2000;
 
@@ -52,7 +52,7 @@ dbRefObj.on('value', function(datasnap1){
 	else if (placename == "Central Auditorium")
 		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114947480435275_20190516_185623853.jpeg')";
 	else if (placename == "College Office")
-		document.getElementById("box").style.backgroundImage = "url('images/LRM_EXPORT_115079680147662_20190516_190027175.jpeg')";
+		document.body.style.backgroundImage = "url('images/LRM_EXPORT_115079680147662_20190516_190027175.jpeg')";
 	else if (placename == "Manager's Office")
 		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114992595550342_20190516_185708968.jpeg')";
 	else if (placename == "Principal's Office")

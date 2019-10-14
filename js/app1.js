@@ -183,7 +183,7 @@ newscount.on('value', function(snapNewCount){
         count2=0;
         loop();
     }else if (count2<=array2.length){
-        setTimeout(loop, 3000);
+        setTimeout(loop, 7500);
     	}
     	//if(count2>Object.keys(snapNewCount.val()).length)
 		count2+=1;

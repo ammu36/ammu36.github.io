@@ -1,0 +1,110 @@
+.leftside, .rightside
+{
+	width: 100%;
+	height: 100vh;
+}
+.leftside
+{
+	background-color: none;
+}
+.rightside
+{
+	background-color: none;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-size: cover;
+
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.leftside .box
+{
+	position: relative;
+	width: 46vw;
+	height: 49vh;
+	float: none;
+	margin-bottom: 10px;
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 10px;
+}
+.rightside .box
+{
+	position: relative;
+	width: 50vw;
+	height: 100vh ;
+	float: none;
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.leftside .box .news
+{
+	position: relative;
+	width: 400px;
+	height: 24vh ;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: left;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.box h1
+{
+	color: aqua;
+	font-weight: 600;
+	font-size: 40px;
+}
+.box span
+{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	outline: none;
+	color: #ccff33;
+	font-weight: 800;
+}
+.box span:nth-child(1), .box span:nth-child(2), .box span:nth-child(3), #per
+{
+	color: white;
+	font-size: 22px;
+}
+.container .box .news .marquee-bottom
+{
+	color: white;
+	font-size: 22px;
+}
+#news-top
+{
+	color: aqua;
+	font-weight: 600;
+	font-size: 35px;
+	text-align: center;
+}
+#news-bottom
+{
+	color: #ccff33;
+}
+#news-detail
+{
+	color: #A239CA;
+	font-weight: bold;
+}
+img
+{
+	width: 100%;
+	height: 100%;
+}

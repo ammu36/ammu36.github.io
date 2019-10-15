@@ -44,11 +44,11 @@ body
 .leftside .box .news
 {
 	position: relative;
-	width: 400px;
+	width: 45vw;
 	height: 34vh ;
 	margin: 0 auto;
 	display: inline-block;
-	text-align: left;
+	text-align: center;
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -91,7 +91,6 @@ body
 	text-align: center;
 	outline: none;
 	color: #ccff33;
-	/*font-weight: 800;*/
 }
 .box span:nth-child(1), .box span:nth-child(2), .box span:nth-child(3), #per
 {
@@ -106,7 +105,6 @@ body
 #news-top
 {
 	color: #52de97;
-	font-weight: 600;
 	font-size: 25px;
 	text-align: center;
 }

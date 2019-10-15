@@ -7,51 +7,60 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
 
+<body>
 	<div class = "row no-gutters">
 		<div class = "col no-gutters">
 			<div class = "leftside" >
 				<div class="box">
 					<div id= "box_bg" >
 						<div id="box_bg2">
-					<!-- <h1>Staff Locator</h1> -->
-					<!--<span id = 'nam'>Name:--><span id="name"></span><!-- </span> -->
-					<span id = 'place'>Current Place :<span id='where'></span></span>
-					<span id = 'time'>ETA to office :<span id='till'><span id='date' style="display: inline;"></span><span id="timeD" style="display: inline;"><span id='hour' style="display: inline;"></span>:<span id='min' style="display: inline;"></span>&nbsp<span id='per' style="display: inline;"></span></span></span></span><br>
-				</div>
-				</div>
-				</div>
-				<div class="box" style="background-color: #394a6d;">
-					<div class="news">
-						<ul class = "marquee-bottom" id ="news-top">
-						</ul>
-						<b><ul class = "marquee-bottom" id = "news-detail">
-						</ul><b>
+							<!-- <h1>Staff Locator</h1> -->
+							<!--<span id = 'nam'>Name:-->
+								<span id="name"></span>
+								<!-- </span> -->
+								<span id = 'place'>Current Place :
+									<span id='where'></span>
+								</span>
+								<span id = 'time'>ETA to office :
+									<span id='till'>
+										<span id='date' style="display: inline;">
+										</span>
+										<span id="timeD" style="display: inline;">
+											<span id='hour' style="display: inline;"></span>
+											:<span id='min' style="display: inline;"></span>
+											&nbsp<span id='per' style="display: inline;"></span>
+										</span>
+									</span>
+								</span>
+								<br>
+							</div>
+						</div>
 					</div>
-					<hr>
-					<div class="news">
-						<marquee class = "marquee-bottom" direction = up scrollamount = "4" height= "100%">
-						<ul id ="news-bottom">
-						</ul>
-						</marquee>
+					<div class="box" style="background-color: #394a6d;">
+						<div class="news">
+							<ul class = "marquee-bottom" id ="news-top"></ul>
+							<b><ul class = "marquee-bottom" id = "news-detail"></ul></b>
+						</div>
+						<hr>
+						<div class="news">
+							<marquee class = "marquee-bottom" direction = up scrollamount = "4" height= "100%">
+								<ul id ="news-bottom">
+								</ul>
+							</marquee>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div> 
-		<div class = "col no-gutters" style="padding-left: 0px; padding-right: 0px;">
-			<div class = "rightside">
-				<div class="box">
-					<img id = "img">
+			</div> 
+			<div class = "col no-gutters" style="padding-left: 0px; padding-right: 0px;">
+				<div class = "rightside">
+					<div class="box">
+						<img id = "img">
+					</div>
 				</div>
-			</div>
-		</div> 
-
-
-
-
-	</div>
-	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
-	<script type="text/javascript" src="js/app1.js"></script>
-</body>
-</html>
+			</div> 
+		</div>
+		<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+		<script type="text/javascript" src="js/app1.js"></script>
+	</body>
+	</html>

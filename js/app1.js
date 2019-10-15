@@ -39,35 +39,35 @@ dbRefObj.on('value', function(datasnap1){
 	var placename = datasnap1.val();
 
 	if (placename == "HOD's Office")
-		document.body.style.backgroundImage = "url('images/instagram image-7.1.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/instagram image-7.1.jpg')";
 	else if (placename == "RS Staff Room")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114917013494636_20190516_185553386.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114917013494636_20190516_185553386.jpeg')";
 	else if (placename == "Canteen")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_115094647104049_20190516_190042142.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_115094647104049_20190516_190042142.jpeg')";
 	else if (placename == "Academic Council")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_115021229493247_20190516_185737602.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_115021229493247_20190516_185737602.jpeg')";
 	else if (placename == 'St. Alphonsa Hall')
-		document.body.style.backgroundImage = "url('images/alphonsa.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/alphonsa.jpg')";
 	else if (placename == 'Automobile')
-		document.body.style.backgroundImage = "url('images/auto.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/auto.jpg')";
 	else if (placename == "Central Auditorium")
 		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114947480435275_20190516_185623853.jpeg')";
 	else if (placename == "College Office")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_115079680147662_20190516_190027175.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_115079680147662_20190516_190027175.jpeg')";
 	else if (placename == "Manager's Office")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114992595550342_20190516_185708968.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114992595550342_20190516_185708968.jpeg')";
 	else if (placename == "Principal's Office")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114869986100993_20190516_185506359.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114869986100993_20190516_185506359.jpeg')";
 	else if (placename == "Basketball Court")
-		document.body.style.backgroundImage = "url('images/Basketball.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/Basketball.jpg')";
 	else if (placename == "CCF")
-		document.body.style.backgroundImage = "url('images/ccf.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/ccf.jpg')";
 	else if (placename == "Admission cell" || placename == "Admission Cell")
-		document.body.style.backgroundImage = "url('images/LRM_EXPORT_114896999751444_20190516_185533373.jpeg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/LRM_EXPORT_114896999751444_20190516_185533373.jpeg')";
 	else if (placename == 'Unavailable')
-		document.body.style.backgroundImage = "url('images/Instagram Image-0.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/Instagram Image-0.jpg')";
 	else
-		document.body.style.backgroundImage = "url('images/instagram image-7.1.jpg')";
+		document.getElementById("box_bg").style.backgroundImage = "url('images/instagram image-7.1.jpg')";
 
 })
 	
@@ -155,6 +155,7 @@ newscount.on('value', function(snapNewCount){
 
 		var newsDetail = dbRefObj3.child('news');
 		var newsTitle = dbRefObj3.child('title');
+
 		
 		let li = document.createElement('li');
 		let b = document.createElement('br');
@@ -189,18 +190,7 @@ newscount.on('value', function(snapNewCount){
     	//if(count2>Object.keys(snapNewCount.val()).length)
 		count2+=1;
 	}
-
-
-	loop();
-	
-  /*tangRef.getDownloadURL().then(function(url){
-    // Once we have the download URL, we set it to our img element
-    document.querySelector('img').src = url;
-    console.log(url);
-  }).catch(function(error) {
-    // If anything goes wrong while getting the download URL, log the error
-    console.error(error);
-  });*/
+loop();
 
   var imageCount=0;
     	var iImg2 = 0;
@@ -212,8 +202,6 @@ newscount.on('value', function(snapNewCount){
   		console.log(imageRef.toString());
   		imageCount++;
   		displayImage(imageCount, imageRef);
-  		
-  		 //document.querySelector('img').src = url;
   	});
   });
   function displayImage(count, images){
@@ -222,10 +210,12 @@ newscount.on('value', function(snapNewCount){
   	console.log("count "+count);
   	images.getDownloadURL().then(function(url) {
   		ListOfImages[iImg] = url;
+  		console.log("my URL: "+url);
   		console.log("iimag = "+iImg);
   		iImg++;
   	});
 
+//sort array in ascending order
   	changeImage();
 
   }

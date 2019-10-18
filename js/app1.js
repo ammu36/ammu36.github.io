@@ -142,7 +142,7 @@ function eta(){
 
 var array1 = ["",""];
 var array2 = ["",""];
-var newscount = dbRefObj2;
+/*var newscount = dbRefObj2;
 newscount.on('value', function(snapNewCount){
 
 	var newsCount = Object.keys(snapNewCount.val());
@@ -176,6 +176,36 @@ newscount.on('value', function(snapNewCount){
 		//loop();
 
 	}
+});*/
+
+NewsList.innerHTML = "";
+NewsTop.innerHTML = "";
+var query = firebase.database().ref().child('news').orderByKey();
+query.once("value").then(function(newssnapshot){
+	newssnapshot.forEach(function(childSnap){
+		console.log("childData ="+ childSnap.val());
+		console.log("length = "+Object.keys(childSnap.val()).length);
+		/*var newsDetail = childData.child('news');
+		var newsTitle = childData.child('title');
+
+		let li = document.createElement('li');
+		let b = document.createElement('br');
+
+		li.setAttribute('data-id',count);
+		newsTitle.on('value', function(snapNewsTitle){
+
+			array1[count] = snapNewsTitle.val();
+			li.textContent = array1[count];
+			li.appendChild(b);
+		});
+		newsDetail.on('value', function(snapNewsDetail){
+			array2[count] = snapNewsDetail.val();
+		});
+
+		NewsList.appendChild(li);
+		NewsList.appendChild(b);*/
+		//loop();
+	});
 });
 
 	function loop() {
@@ -210,12 +240,15 @@ loop();
   	console.log("count "+count);
   	images.getDownloadURL().then(function(url) {
   		ListOfImages[iImg] = url;
-  		console.log("my URL: "+url);
+  
+  		console.log(images);
+  		//console.log("my URL: "+url);
   		console.log("iimag = "+iImg);
   		iImg++;
   	});
 
 //sort array in ascending order
+	ListOfImages.sort();
   	changeImage();
 
   }
@@ -223,7 +256,7 @@ loop();
   function changeImage(){
 
   	
-  	console.log("imgimgimg "+iImg2);
+  	console.log("imgimgimg "+ListOfImages[iImg2]);
   	if(iImg2 < (ListOfImages.length))
   	{
   		document.querySelector('img').src = ListOfImages[iImg2];
@@ -232,8 +265,7 @@ loop();
   	else
   		iImg2=0;
   	
-  	setTimeout(changeImage, 15000);
+  	setTimeout(changeImage, 3000);
   }
 
    
-

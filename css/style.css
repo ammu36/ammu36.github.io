@@ -17,16 +17,16 @@ body
 .leftside .box
 {
 	position: relative;
-	width: 46vw;
+	width: 47.5vw;
 	height: 49vh;
 	float: none;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 	/*background: rgba(0,0,0,0.6);*/
 
 	text-align: center;
 	box-sizing: border-box;
 	overflow: hidden;
-	/*border-radius: 10px;*/
+	border-radius: 10px;
 }
 .rightside .box
 {
@@ -59,8 +59,8 @@ body
 }
 #box_bg
 {
-	
-	background-size: contain;
+	background-image: url('../images/backtest.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	

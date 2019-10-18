@@ -31,9 +31,7 @@ var array1 = ["",""];
 var array2 = ["",""];
 var newscount = dbRefObj;
 newscount.on('value', function(snapNewCount){
-	//for(count = 1; count<=Object.keys(snapNewCount.val()).length; count ++){
 	snapNewCount.forEach(function(childSnapshot) {
-		//var dbRefObj3 = dbRefObj.child(childSnapshot.toString());
 		console.log(childSnapshot.key);
 		var newsKey = childSnapshot.key;
 		var childObject = childSnapshot.val();

@@ -142,6 +142,7 @@ function eta(){
 
 var array1 = ["",""];
 var array2 = ["",""];
+count=1;
 /*var newscount = dbRefObj2;
 newscount.on('value', function(snapNewCount){
 
@@ -181,44 +182,48 @@ newscount.on('value', function(snapNewCount){
 NewsList.innerHTML = "";
 NewsTop.innerHTML = "";
 var query = firebase.database().ref().child('news').orderByKey();
-query.once("value").then(function(newssnapshot){
+query.on('value', function(newssnapshot){
+	count=1;
 	newssnapshot.forEach(function(childSnap){
-		console.log("childData ="+ childSnap.val());
-		console.log("length = "+Object.keys(childSnap.val()).length);
+
+		var childObject = childSnap.val();
+
+		var newsDetail = childObject.news;
+		var newsTitle = childObject.title;
+
 		/*var newsDetail = childData.child('news');
-		var newsTitle = childData.child('title');
+		var newsTitle = childData.child('title');*/
 
 		let li = document.createElement('li');
 		let b = document.createElement('br');
 
 		li.setAttribute('data-id',count);
-		newsTitle.on('value', function(snapNewsTitle){
-
-			array1[count] = snapNewsTitle.val();
+		
+		//for(count = 1; count<=Object.keys(newsTitle.val()).length; count ++){
+			array1[count] = newsTitle;
 			li.textContent = array1[count];
 			li.appendChild(b);
-		});
-		newsDetail.on('value', function(snapNewsDetail){
-			array2[count] = snapNewsDetail.val();
-		});
+			array2[count++] = newsDetail;
+
 
 		NewsList.appendChild(li);
-		NewsList.appendChild(b);*/
+		NewsList.appendChild(b);
 		//loop();
 	});
 });
 
 	function loop() {
+	console.log(count2);
+	console.log(array1[count2]);
     NewsTop.innerHTML = array1[count2];
     NewsDetail.innerHTML = array2[count2];
-    if (count2 == array2.length) {
-        count2=0;
+    if (count2 == array2.length  ) {
+        count2=1;
         loop();
-    }else if (count2<=array2.length){
+    }else if (count2<array2.length ){
+        count2+=1;
         setTimeout(loop, 7500);
     	}
-    	//if(count2>Object.keys(snapNewCount.val()).length)
-		count2+=1;
 	}
 loop();
 
@@ -229,7 +234,6 @@ loop();
   
   tangRef2.listAll().then(function(result){
   	result.items.forEach(function(imageRef){
-  		console.log(imageRef.toString());
   		imageCount++;
   		displayImage(imageCount, imageRef);
   	});
@@ -237,13 +241,9 @@ loop();
   function displayImage(count, images){
   	
 
-  	console.log("count "+count);
+  	//console.log("count "+count);
   	images.getDownloadURL().then(function(url) {
   		ListOfImages[iImg] = url;
-  
-  		console.log(images);
-  		//console.log("my URL: "+url);
-  		console.log("iimag = "+iImg);
   		iImg++;
   	});
 
@@ -256,7 +256,7 @@ loop();
   function changeImage(){
 
   	
-  	console.log("imgimgimg "+ListOfImages[iImg2]);
+  	//console.log("imgimgimg "+ListOfImages[iImg2]);
   	if(iImg2 < (ListOfImages.length))
   	{
   		document.querySelector('img').src = ListOfImages[iImg2];

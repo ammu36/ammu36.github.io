@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="News">
+  <meta name="author" content="samin">
+
+  <title>News</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+  <!-- bootstrap theme -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+    <!--header start-->
+    <header class="header dark-bg">
+      <!--logo start-->
+      <a href="" class="logo">Admin <span class="lite">Panel</span></a>
+      <!--logo end-->
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li>
+            <a href="addNews.html" class="active"><span>News</span></a>
+          </li>
+          <li>
+            <a href="addImage.html" class=""><span>Images</span></a>
+          </li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+              <header class="panel-heading">
+                Enter Information
+              </header>
+              <div class="panel-body">
+                <form class="form-horizontal " method="post" id="newsAddForm" autocomplete="off">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control round-input" id="newsTitle">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="newsDescription">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary col-sm-2" id="submitNewNews" >Submit</button>
+                </form>
+              </div>
+            </section>
+          </div>
+
+          <div id="newsList">
+            <!-- to be updated from addImage.js -->
+          </div>
+        </div>
+      </section>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section end -->
+
+  <!-- jquery ui -->
+  <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- custom js -->
+  <script type="text/javascript" src="js/news.js"></script>
+</body>
+</html>

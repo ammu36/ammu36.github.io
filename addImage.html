@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Display and Add Images">
+	<meta name="author" content="samin">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- bootstrap theme -->
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<!-- Custom styles -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style-responsive.css" rel="stylesheet" />
+	<title>Images</title>
+
+	<!-- For uploader animation -->
+	<style media="screen">
+		#uploader{
+			-webkit-appearance: none;
+			appearance: none;
+			width: 50%;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- container section start -->
+	<section id="container" class="">
+		<!--header start-->
+		<header class="header dark-bg">
+			<!--logo start-->
+			<a href="index.html" class="logo">Admin <span class="lite">Panel</span></a>
+			<!--logo end-->
+		</header>
+		<!--header end-->
+
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu">
+					<li>
+						<a href="addNews.html" class=""><span>News</span></a>
+					</li>
+					<li>
+						<a href="addImage.html" class="active"><span>Images</span></a>
+					</li>
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->
+
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<div class="row">
+					<progress value="0" max="100" id="uploader">0% </progress> 
+					<input type="file" value="upload" id="fileButton"/>
+					<hr>
+
+					<!-- Start imagelist-->
+					<div id="imageList">
+						<!-- to be updated from addImage.js -->
+					</div>
+				</div>
+				<!-- End imagelist -->
+			</section>
+		</section>
+		<!--main content end-->
+	</section>
+	<!-- container section end -->
+
+	<!-- javascripts -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="js/image.js"></script>
+
+</body>
+</html>

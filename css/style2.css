@@ -17,13 +17,14 @@ body
 .leftside .box
 {
 	position: relative;
-	width: 47.5vw;
+	width: 48vw;
 	//height: 49vh;
 	float: none;
 	text-align: center;
 	box-sizing: border-box;
 	overflow: hidden;
 	border-radius: 10px;
+	box-sizing: content-box;
 }
 .rightside .box
 {
@@ -36,13 +37,14 @@ body
 	box-sizing: border-box;
 	overflow: hidden;
 	border-radius: 10px;
+	box-sizing: content-box;
 }
 
 .leftside .box .news
 {
 	position: relative;
 	width: 45vw;
-	height: 34vh ;
+	//height: 34vh ;
 	margin: 0 auto;
 	display: inline-block;
 	text-align: center;

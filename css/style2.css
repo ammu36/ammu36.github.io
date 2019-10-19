@@ -18,11 +18,8 @@ body
 {
 	position: relative;
 	width: 47.5vw;
-	height: 49vh;
+	//height: 49vh;
 	float: none;
-	/*margin-bottom: 10px;*/
-	/*background: rgba(0,0,0,0.6);*/
-
 	text-align: center;
 	box-sizing: border-box;
 	overflow: hidden;

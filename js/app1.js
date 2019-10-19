@@ -143,42 +143,6 @@ function eta(){
 var array1 = ["",""];
 var array2 = ["",""];
 count=1;
-/*var newscount = dbRefObj2;
-newscount.on('value', function(snapNewCount){
-
-	var newsCount = Object.keys(snapNewCount.val());
-
-	NewsList.innerHTML = "";
-	NewsTop.innerHTML = "";
-	for(count = 1; count<=Object.keys(snapNewCount.val()).length; count ++){
-
-		var dbRefObj3 = dbRefObj2.child(count);
-
-		var newsDetail = dbRefObj3.child('news');
-		var newsTitle = dbRefObj3.child('title');
-
-		
-		let li = document.createElement('li');
-		let b = document.createElement('br');
-
-		li.setAttribute('data-id',count);
-		newsTitle.on('value', function(snapNewsTitle){
-
-			array1[count] = snapNewsTitle.val();
-			li.textContent = array1[count];
-			li.appendChild(b);
-		});
-		newsDetail.on('value', function(snapNewsDetail){
-			array2[count] = snapNewsDetail.val();
-		});
-
-		NewsList.appendChild(li);
-		NewsList.appendChild(b);
-		//loop();
-
-	}
-});*/
-
 NewsList.innerHTML = "";
 NewsTop.innerHTML = "";
 var query = firebase.database().ref().child('news').orderByKey();
@@ -190,16 +154,10 @@ query.on('value', function(newssnapshot){
 
 		var newsDetail = childObject.news;
 		var newsTitle = childObject.title;
-
-		/*var newsDetail = childData.child('news');
-		var newsTitle = childData.child('title');*/
-
 		let li = document.createElement('li');
 		let b = document.createElement('br');
 
 		li.setAttribute('data-id',count);
-		
-		//for(count = 1; count<=Object.keys(newsTitle.val()).length; count ++){
 			array1[count] = newsTitle;
 			li.textContent = array1[count];
 			li.appendChild(b);
@@ -228,8 +186,8 @@ query.on('value', function(newssnapshot){
 loop();
 
   var imageCount=0;
-    	var iImg2 = 0;
-    	var ListOfImages = ["",""];
+    var iImg2 = 0;
+    var ListOfImages = ["",""];
   	var iImg = 0;
   
   tangRef2.listAll().then(function(result){
@@ -250,13 +208,11 @@ loop();
 //sort array in ascending order
 	ListOfImages.sort();
   	changeImage();
+  	console.log(typeof(ListOfImages));
 
   }
 
   function changeImage(){
-
-  	
-  	//console.log("imgimgimg "+ListOfImages[iImg2]);
   	if(iImg2 < (ListOfImages.length))
   	{
   		document.querySelector('img').src = ListOfImages[iImg2];

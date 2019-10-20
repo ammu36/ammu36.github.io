@@ -7,6 +7,9 @@ var config = {
 	    messagingSenderId: "847456890810"
 	  };
 firebase.initializeApp(config);
+/*function getResolution() {
+        console.log("Your screen resolution is: " + screen.width + "x" + screen.height);
+*/
 
 const name = document.getElementById("name");
 const where = document.getElementById("where");
@@ -171,8 +174,6 @@ query.on('value', function(newssnapshot){
 });
 
 	function loop() {
-	console.log(count2);
-	console.log(array1[count2]);
     NewsTop.innerHTML = array1[count2];
     NewsDetail.innerHTML = array2[count2];
     if (count2 == array2.length  ) {
@@ -204,14 +205,7 @@ loop();
   		ListOfImages[iImg] = url;
   		iImg++;
   	});
-
-//sort array in ascending order
-	ListOfImages.sort();
-  	changeImage();
-  	console.log(typeof(ListOfImages));
-
   }
-
   function changeImage(){
   	if(iImg2 < (ListOfImages.length))
   	{
@@ -225,3 +219,10 @@ loop();
   }
 
    
+function logout(){
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
+}

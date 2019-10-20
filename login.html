@@ -2,41 +2,49 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Display and Add Images">
-	<meta name="author" content="samin">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login page">
+  <meta name="author" content="samin">
 
+  <title>Login Page </title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<!-- bootstrap theme -->
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	<!-- Custom styles -->
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/style-responsive.css" rel="stylesheet" />
-	<title>Images</title>
-
-
+  <!-- bootstrap theme -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
 </head>
 
-<body>
-	<!-- container section start -->
-	<section id="container" class="">
-			Hello World
-		
-	</section>
-	<!-- container section end -->
+<body style = "background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/aa152ab3-0e80-482c-a22c-afd353304e30/d3dib4k-c78a4710-3971-41d0-8332-6f66c2772f88.jpg);">
 
-	<!-- javascripts -->
+	<div class="alert alert-danger" id="errorLoginMsg" role="alert" style = "visibility: hidden ;">
+    <strong>Wrong email or password!</strong>
+	</div>
+  <div class="container" >
+    <form class="login-form" name="loginForm" id="loginForm" autocomplete="off" >
+      <div class="login-wrap">
+        <p class="login-img"><i class="icon_lock_alt"></i></p>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="icon_profile"></i></span>
+          <input type="text" class="form-control" placeholder="Username" autofocus required name="loginId">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+          <input type="password" class="form-control" placeholder="Password" name="loginPass" required>
+        </div>
+        <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" >Login</button>
+      </div>
+    </form>
+  </div>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-	<!-- custom -->
-	<script type="text/javascript" src="js/login.js"></script>
-
+  <script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>

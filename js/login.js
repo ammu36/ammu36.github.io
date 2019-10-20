@@ -9,6 +9,33 @@ var config = {
 	  };
 firebase.initializeApp(config);
 
-var provider = new firebase.auth.GoogleAuthProvider();
+document.getElementById('loginForm').addEventListener('submit', loginAction);
+var user = firebase.auth().currentUser;
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // User is signed in.
+	window.location.replace("addNews.html");
+} 	else {
+  // No user is signed in.
+  	console.log("No user");
+}
+});
 
-firebase.auth().signInWithRedirect(provider);
+function loginAction(e){
+	e.preventDefault();
+	id = document.loginForm.loginId.value;
+	pass = document.loginForm.loginPass.value;
+	firebase.auth().signInWithEmailAndPassword(id,pass).catch(function(error) {
+		document.getElementById('errorLoginMsg').style.visibility = 'visible';
+  	console.log(error.code);
+  	console.log(error.message);
+});
+}
+
+function logout(){
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
+}

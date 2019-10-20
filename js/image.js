@@ -8,6 +8,16 @@ var config = {
 	    messagingSenderId: "847456890810"
 	  };
 firebase.initializeApp(config);
+var user = firebase.auth().currentUser;
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // User is signed in.
+	
+} 	else {
+  // No user is signed in.
+  	window.location.replace("login.html");
+}
+});
 
 //Get upload elements
 var uploader = document.getElementById('uploader');
@@ -113,4 +123,12 @@ function refreshAfterInsert() {
   } else {
     txt = "You pressed Cancel!";
   }
+}
+
+function logout(){
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
 }

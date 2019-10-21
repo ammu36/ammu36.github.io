@@ -198,15 +198,17 @@ loop();
   	});
   });
   function displayImage(count, images){
-  	
-
-  	//console.log("count "+count);
+  	console.log("count "+count);
   	images.getDownloadURL().then(function(url) {
   		ListOfImages[iImg] = url;
+  		console.log(url);
   		iImg++;
   	});
   }
+
+  changeImage();
   function changeImage(){
+  	console.log("count "+count);
   	if(iImg2 < (ListOfImages.length))
   	{
   		document.querySelector('img').src = ListOfImages[iImg2];
@@ -214,7 +216,6 @@ loop();
   	}
   	else
   		iImg2=0;
-  	
   	setTimeout(changeImage, 3000);
   }
 
